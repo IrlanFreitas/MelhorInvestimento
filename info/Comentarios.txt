@@ -1,0 +1,13 @@
+Não consegui imaginar uma arquitetura interessante na utilização do JPA.
+
+Na carteira de investimentos, aplicação e carteira devem ser únicos.
+
+CarteiraInvestimentoController - criar um método de válidação.
+
+<<<<<<< HEAD
+Melhorar forma de inserir aplicação na carteira de investimento (Duas buscas no banco).
+
+Acho que errei na modelagem, carteira é a mesma coisa que aplicação só que agrega outras aplicações.
+=======
+Melhorar forma de inserir carteira de investimento (Duas buscas no banco)
+>>>>>>> 86c3752092958a189b80c81675e1def28951bc56
