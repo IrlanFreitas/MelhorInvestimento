@@ -27,31 +27,16 @@ public class Aplicacao {
 	
 	@Column(nullable = false)
 	private Double valorMinimo;
-<<<<<<< HEAD
 	
 	public Aplicacao() {}
 	
 	public Aplicacao(String codigo, String descricao, Double estimativaRisco, Double estimativaRendimento, Double valorMinimo) {
-=======
-	
-//	@OneToMany(mappedBy = "aplicacao")
-//	private List<CarteiraInvestimento> carteirasInvestimento;
-	
-	public Aplicacao() {}
-	
-	public Aplicacao(String codigo, String descricao, Double estimativaRisco, Double estimativaRendimento, Double valorMinimo) throws IllegalAccessException {
->>>>>>> 86c3752092958a189b80c81675e1def28951bc56
+
 		super();
 		this.codigo = codigo;
 		this.descricao = descricao;
 		this.estimativaRisco = estimativaRisco;
 		this.estimativaRendimento = estimativaRendimento;
-<<<<<<< HEAD
-=======
-		if (valorMinimo < 500.0) {
-			throw new IllegalAccessException("Valor da aplicação deve ser maior que 500.0");
-		}
->>>>>>> 86c3752092958a189b80c81675e1def28951bc56
 		this.valorMinimo = valorMinimo;
 	}
 

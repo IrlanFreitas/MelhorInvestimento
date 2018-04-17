@@ -54,10 +54,7 @@ public class PopularDados {
 			
 			System.out.println(e.getMessage());
 		}
-<<<<<<< HEAD
 		
-=======
->>>>>>> 86c3752092958a189b80c81675e1def28951bc56
 		// CarteiraInvestimentoDAO carteiraInvestimentoDAO = new
 		// CarteiraInvestimentoDAO(em);
 		//

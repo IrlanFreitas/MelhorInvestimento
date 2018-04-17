@@ -9,6 +9,7 @@ import br.com.melhorinvestimento.dao.AplicacaoDAO;
 import br.com.melhorinvestimento.dao.CarteiraDAO;
 import br.com.melhorinvestimento.model.Aplicacao;
 import br.com.melhorinvestimento.model.Carteira;
+import br.com.melhorinvestimento.model.Recomendacao;
 
 public class MainController {
 	
@@ -26,7 +27,9 @@ public class MainController {
 		this.aplicacaoController = new AplicacaoController(em);
 	}
 
-	public void recomendacao(Double valor, Double riscoMaximo) {
+	public Recomendacao recomendacao(Double valor, Double riscoMaximo) {
+		
+		Recomendacao recomendacao = new Recomendacao();
 		
 		List<Aplicacao> aplicacoes = aplicacaoDAO.encontrarComValorAbaixo(valor);
 		
@@ -42,10 +45,16 @@ public class MainController {
 		
 		System.out.println("--------------------- Aplicação Mais Rentável ---------------------");
 		System.out.println("De acordo com os critérios apresentados a melhor aplicação é ");
-		System.out.println( melhorAplicacao.getCodigo() + " - " + melhorAplicacao.getDescricao());
+		
+		recomendacao.setAplicacao(  melhorAplicacao.getCodigo() + " - " + melhorAplicacao.getDescricao() );
+		recomendacao.setRendimento( melhorAplicacao.getEstimativaRendimento() * valor );
+		
+		System.out.println( recomendacao.getAplicacao() );
 		System.out.println(" Ganho estimado ");
-		System.out.println( " R$ "+ melhorAplicacao.getEstimativaRendimento() * valor );
+		System.out.println( " R$ "+ recomendacao.getRendimento() );
 		System.out.println("--------------------- Aplicação Mais Rentável ---------------------");
+		
+		return recomendacao;
 		
 	}
 	
