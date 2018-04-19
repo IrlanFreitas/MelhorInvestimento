@@ -2,6 +2,7 @@ package br.com.melhorinvestimento.util;
 
 import javax.persistence.EntityManager;
 
+import br.com.melhorinvestimento.controller.CarteiraInvestimentoController;
 import br.com.melhorinvestimento.dao.AplicacaoDAO;
 import br.com.melhorinvestimento.dao.CarteiraDAO;
 import br.com.melhorinvestimento.dao.CarteiraInvestimentoDAO;
@@ -46,9 +47,17 @@ public class PopularDados {
 			aplicacaDAO.inserir(micro);
 
 			CarteiraDAO carteiraDAO = new CarteiraDAO(em);
-
+			
+			CarteiraInvestimentoController investimentoController = new CarteiraInvestimentoController(em);
+			
 			carteiraDAO.inserir(clp);
 			carteiraDAO.inserir(cslr);
+			
+			investimentoController.adicionaAplicacao(clp, petr4, 20.0);
+			investimentoController.adicionaAplicacao(clp, bbse3, 40.0);
+			investimentoController.adicionaAplicacao(clp, cdb, 15.0);
+			investimentoController.adicionaAplicacao(clp, poup, 15.0);
+			investimentoController.adicionaAplicacao(clp, vale5, 10.0);
 			
 		} catch (Exception e) {
 			

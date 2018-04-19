@@ -1,26 +1,27 @@
 package br.com.melhorinvestimento.view;
 
-import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.persistence.EntityManager;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
 
 import br.com.melhorinvestimento.controller.MainController;
 import br.com.melhorinvestimento.util.JPAUtil;
 
-import javax.persistence.EntityManager;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-
 
 public class Recomendacao extends JFrame {
 
+
+	private static final long serialVersionUID = 1877726073992468597L;
+	
 	private JPanel contentPane;
 	private JTextField textValor;
 	private JTextField textRisco;
